@@ -46,6 +46,7 @@ class DisplayViewController: UIViewController {
     
     @IBAction func sendButtonCliked(_ sender: UIButton) {
         resultLabel.text = UserTextField.text
+        resultLabel.adjustsFontSizeToFitWidth = true
         view.endEditing(true)
     }
     
@@ -55,9 +56,16 @@ class DisplayViewController: UIViewController {
         
     }
     
-    @IBAction func tapGestureCliked(_ sender: UITapGestureRecognizer) {
-        view.endEditing(true)
+    @IBAction func textFieldAction(_ sender: UITextField) {
+        
     }
     
-
+    @IBAction func tapGestureViewCliked(_ sender: UITapGestureRecognizer) {
+        
+        if textView.isHidden == true {
+            textView.isHidden = false
+        } else {
+            textView.isHidden = true
+        }
+    }
 }
